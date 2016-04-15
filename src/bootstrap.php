@@ -32,26 +32,35 @@ $routeDefinitionCallback = function (\FastRoute\RouteCollector $r) {
 };
 
 $dispatcher = \FastRoute\simpleDispatcher($routeDefinitionCallback);
+
 $routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getPath());
 switch ($routeInfo[0]) {
+
     case \FastRoute\Dispatcher::NOT_FOUND:
         $response->setContent('404 - Page not found');
         $response->setStatusCode(404);
         break;
+
     case \FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
         $response->setContent('405 - Method not allowed');
         $response->setStatusCode(405);
         break;
+
     case \FastRoute\Dispatcher::FOUND:
-        $handler = $routeInfo[1];
-        $vars = $routeInfo[2];
-        call_user_func($handler, $vars);
+
+        if (is_callable($routeInfo[1])) {
+            $handler = $routeInfo[1];
+            $vars = $routeInfo[2];
+            call_user_func($handler, $vars);
+        } else {
             $className = $routeInfo[1][0];
             $method = $routeInfo[1][1];
             $vars = $routeInfo[2];
 
             $class = new $className;
             $class->$method($vars);
+        }
+
         break;
 }
 
