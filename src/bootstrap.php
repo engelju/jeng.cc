@@ -48,18 +48,12 @@ switch ($routeInfo[0]) {
 
     case \FastRoute\Dispatcher::FOUND:
 
-        if (is_callable($routeInfo[1])) {
-            $handler = $routeInfo[1];
-            $vars = $routeInfo[2];
-            call_user_func($handler, $vars);
-        } else {
-            $className = $routeInfo[1][0];
-            $method = $routeInfo[1][1];
-            $vars = $routeInfo[2];
+        $className = $routeInfo[1][0];
+        $method = $routeInfo[1][1];
+        $vars = $routeInfo[2];
 
-            $class = new $className;
-            $class->$method($vars);
-        }
+        $class = new $className;
+        $class->$method($vars);
 
         break;
 }
