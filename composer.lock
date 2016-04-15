@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "942239fb088561ad46e617c1f8b00860",
-    "content-hash": "23905fde1fe1f2b02e5c046a8db3e6cd",
+    "hash": "d6de12a1f2eb4f61a8e4290916a22b88",
+    "content-hash": "579dcca91e34c68087bbfb2817b3662d",
     "packages": [
         {
             "name": "filp/whoops",
@@ -66,6 +66,49 @@
                 "zf2"
             ],
             "time": "2016-04-07 06:16:25"
+        },
+        {
+            "name": "nikic/fast-route",
+            "version": "v0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/FastRoute.git",
+                "reference": "5e1f431ed2afe2be5d2bd97fa69b0e99b9ba45e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/5e1f431ed2afe2be5d2bd97fa69b0e99b9ba45e6",
+                "reference": "5e1f431ed2afe2be5d2bd97fa69b0e99b9ba45e6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FastRoute\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov",
+                    "email": "nikic@php.net"
+                }
+            ],
+            "description": "Fast request router for PHP",
+            "keywords": [
+                "router",
+                "routing"
+            ],
+            "time": "2016-03-25 23:46:52"
         },
         {
             "name": "patricklouys/http",
