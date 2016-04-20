@@ -16,5 +16,12 @@ $injector->alias('Http\Response', 'Http\HttpResponse');
 $injector->share('Http\HttpResponse');
 
 $injector->alias('NoFw\Template\Renderer', 'NoFw\Template\MustacheRenderer');
+$injector->define('Mustache_Engine', [
+    ':options' => [
+        'loader' => new Mustache_Loader_FilesystemLoader(dirname(__DIR__) . '/templates', [
+            'extension' => '.html', // use html instead of default .moustache file ext
+        ]),
+    ]
+]);
 
 return $injector;

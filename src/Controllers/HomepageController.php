@@ -30,7 +30,7 @@ class HomepageController
             'name' => $this->request->getParameter('name', 'stranger'),
         ];
 
-        $html = $this->renderer->render('<h1>Aloha!</h1> Hello {{name}}', $data);
+        $html = $this->renderer->render('homepage', $data);
         $this->response->setContent($html);
     }
 }
