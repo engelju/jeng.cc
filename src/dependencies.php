@@ -15,4 +15,6 @@ $injector->define('Http\HttpRequest', [
 $injector->alias('Http\Response', 'Http\HttpResponse');
 $injector->share('Http\HttpResponse');
 
+$injector->alias('NoFw\Template\Renderer', 'NoFw\Template\MustacheRenderer');
+
 return $injector;
