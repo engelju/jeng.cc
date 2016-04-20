@@ -7,10 +7,6 @@ use Http\Response;
 
 use NoFw\Template\Renderer;
 
-/**
- * Class HomepageController
- * @author yourname
- */
 class HomepageController
 {
     private $request;
