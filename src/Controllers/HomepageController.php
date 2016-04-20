@@ -2,6 +2,7 @@
 
 namespace NoFw\Controllers;
 
+use Http\Request;
 use Http\Response;
 
 /**
@@ -10,15 +11,19 @@ use Http\Response;
  */
 class HomepageController
 {
+    private $request;
     private $response;
 
-    public function __construct(Response $response)
+    public function __construct(Request $request, Response $response)
     {
+        $this->request  = $request;
         $this->response = $response;
     }
 
     public function show()
     {
-        $this->response->setContent('Hello World');
+        $content = '<h1>Hello World</h1>';
+        $content .= 'Hello ' . $this->request->getParameter('name', 'stranger');
+        $this->response->setContent($content);
     }
 }
