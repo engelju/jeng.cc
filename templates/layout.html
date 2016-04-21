@@ -1,6 +1,10 @@
-{% for item in menuItems %}
-    <a href="{{ item.href }}">{{ item.text }}</a></br>
-{% endfor %}
+{% if menuItems %}
+    <ul>
+        {% for item in menuItems %}
+            <li><a href="{{ item.href }}">{{ item.text }}</a>
+        {% endfor %}
+    </ul>
+{% endif %}
 <hr>
 {% block content %}
 {% endblock %}
