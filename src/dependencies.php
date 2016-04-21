@@ -2,8 +2,6 @@
 
 $injector = new \Auryn\Injector;
 
-$injector->alias('Http\Request', 'Http\HttpRequest');
-$injector->share('Http\HttpRequest');
 $injector->define('Http\HttpRequest', [
     ':get' => $_GET,
     ':post' => $_POST,
@@ -11,6 +9,8 @@ $injector->define('Http\HttpRequest', [
     ':files' => $_FILES,
     ':server' => $_SERVER,
 ]);
+$injector->alias('Http\Request', 'Http\HttpRequest');
+$injector->share('Http\HttpRequest');
 
 $injector->alias('Http\Response', 'Http\HttpResponse');
 $injector->share('Http\HttpResponse');
@@ -29,10 +29,10 @@ $injector->delegate('Twig_Environment', function() use ($injector) {
 });
 $injector->alias('NoFw\Template\Renderer', 'NoFw\Template\TwigRenderer');
 
-$injector->alias('NoFw\Page\PageReader', 'NoFw\Page\FilePageReader');
-$injector->share('NoFw\Page\FilePageReader');
 $injector->define('NoFw\Page\FilePageReader', [
     ':pageFolder' => __DIR__ . '/../pages',
 ]);
+$injector->alias('NoFw\Page\PageReader', 'NoFw\Page\FilePageReader');
+$injector->share('NoFw\Page\FilePageReader');
 
 return $injector;
