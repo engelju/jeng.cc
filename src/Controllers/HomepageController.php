@@ -24,6 +24,9 @@ class HomepageController
     {
         $data = [
             'name' => $this->request->getParameter('name', 'stranger'),
+            'menuItems' => [
+                ['href' => '/', 'text' => 'Homepage'],
+            ],
         ];
 
         $html = $this->renderer->render('homepage', $data);
