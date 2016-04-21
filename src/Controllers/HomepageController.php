@@ -5,7 +5,7 @@ namespace NoFw\Controllers;
 use Http\Request;
 use Http\Response;
 
-use NoFw\Template\Renderer;
+use NoFw\Template\FrontendRenderer;
 
 class HomepageController
 {
@@ -13,7 +13,7 @@ class HomepageController
     private $response;
     private $renderer;
 
-    public function __construct(Request $request, Response $response, Renderer $renderer)
+    public function __construct(Request $request, Response $response, FrontendRenderer $renderer)
     {
         $this->request  = $request;
         $this->response = $response;
@@ -24,9 +24,6 @@ class HomepageController
     {
         $data = [
             'name' => $this->request->getParameter('name', 'stranger'),
-            'menuItems' => [
-                ['href' => '/', 'text' => 'Homepage'],
-            ],
         ];
 
         $html = $this->renderer->render('homepage', $data);

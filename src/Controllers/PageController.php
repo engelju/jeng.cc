@@ -4,7 +4,7 @@ namespace NoFw\Controllers;
 
 use Http\Response;
 
-use NoFw\Template\Renderer;
+use NoFw\Template\FrontendRenderer;
 use NoFw\Page\PageReader;
 use NoFw\Page\InvalidPageException;
 
@@ -14,7 +14,7 @@ class PageController
     private $renderer;
     private $pageReader;
 
-    public function __construct(Response $response, Renderer $renderer, PageReader $pageReader)
+    public function __construct(Response $response, FrontendRenderer $renderer, PageReader $pageReader)
     {
         $this->response = $response;
         $this->renderer = $renderer;

@@ -28,6 +28,7 @@ $injector->delegate('Twig_Environment', function() use ($injector) {
     return $twig;
 });
 $injector->alias('NoFw\Template\Renderer', 'NoFw\Template\TwigRenderer');
+$injector->alias('NoFw\Template\FrontendRenderer', 'NoFw\Template\FrontendTwigRenderer');
 
 $injector->define('NoFw\Page\FilePageReader', [
     ':pageFolder' => __DIR__ . '/../pages',
