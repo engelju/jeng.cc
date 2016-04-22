@@ -2,6 +2,8 @@
 
 namespace NoFw\Template;
 
+use Symfony\Component\Yaml\Parser;
+
 class FrontendTwigRenderer implements FrontendRenderer
 {
     private $renderer;
@@ -13,15 +15,9 @@ class FrontendTwigRenderer implements FrontendRenderer
 
     public function render($template, $data = [])
     {
-        // todo: use yaml to read this in
-        $navbar_items = [
-            'menuItems' => [
-                ['href' => '/', 'text' => 'Homepage'],
-                ['href' => '/about', 'text' => 'About'],
-                ['href' => '/first-page', 'text' => 'Test'],
-            ],
-        ];
-        
+        $yaml = new Parser();
+        $navbar_items = $yaml->parse(file_get_contents('../config/nav.yml'));
+
         return $this->renderer->render($template, array_merge($data, $navbar_items));
     }
 }
