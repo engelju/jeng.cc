@@ -3,6 +3,7 @@
 namespace NoFw\Page;
 
 use InvalidArgumentException;
+use Symfony\Component\Yaml\Parser;
 
 class FilePageReader implements PageReader
 {
@@ -22,11 +23,12 @@ class FilePageReader implements PageReader
             throw new InvalidArgumentException('slug must be a string');
         }
 
-        $file = "$this->pageFolder/$slug.html";
+        $file = "$this->pageFolder/$slug.yml";
         if (!file_exists($file)) {
             throw new InvalidPageException($slug);
         }
 
-        return file_get_contents($file);
+        $yaml = new Parser();
+        return $yaml->parse(file_get_contents($file));
     }
 }
