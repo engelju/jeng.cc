@@ -1,4 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
-    {{ content | raw }}
+	<div class="page-header">
+        <h1>{{ metadata.title }}
+            <span class="pull-right label label-default">
+                {{ metadata.date | date("Y-m-d") }}&nbsp;
+                <i class="fa fa-calendar"></i> 
+            </span>
+        </h1>
+	</div>
+    <div class="page-content">
+        {{ content | raw }}
+    </div>
 {% endblock %}
