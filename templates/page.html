@@ -2,10 +2,12 @@
 {% block content %}
 	<div class="page-header">
         <h1>{{ metadata.title }}
+            {% if metadata.date %}
             <span class="pull-right label label-default">
                 {{ metadata.date | date("Y-m-d") }}&nbsp;
                 <i class="fa fa-calendar"></i> 
             </span>
+            {% endif %}
         </h1>
 	</div>
     <div class="page-content">
