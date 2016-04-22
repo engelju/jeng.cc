@@ -13,13 +13,15 @@ class FrontendTwigRenderer implements FrontendRenderer
 
     public function render($template, $data = [])
     {
-        $data = array_merge($data, [
+        // todo: use yaml to read this in
+        $navbar_items = [
             'menuItems' => [
                 ['href' => '/', 'text' => 'Homepage'],
                 ['href' => '/about', 'text' => 'About'],
                 ['href' => '/first-page', 'text' => 'Test'],
             ],
-        ]);
-        return $this->renderer->render($template, $data);
+        ];
+        
+        return $this->renderer->render($template, array_merge($data, $navbar_items));
     }
 }
