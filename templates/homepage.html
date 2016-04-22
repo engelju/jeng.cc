@@ -1,5 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>Aloha from inside the template!</h1>
-    Hello {{name}}!
+	<div class="page-header">
+		<h1>Aloha</h1>
+	</div>
+	<p>Hello {{name}}!</p>
+	Todo:
+	<ul>
+		<li>Instead of using HTML within each page, use something like YAML to define heading and content (extend <code>FilePageReader</code>).</li>
+			<ul><li>cf. <a href="https://jekyllrb.com/docs/frontmatter/">like it's being done in Jekyll</a></li></ul>
+		<li>Define Nav-Elements outside of <code>FrontendTwigRenderer</code>, maybe also use YAML for that.</li>
+	</ul>
 {% endblock %}
