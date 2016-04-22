@@ -17,6 +17,7 @@ class FrontendTwigRenderer implements FrontendRenderer
             'menuItems' => [
                 ['href' => '/', 'text' => 'Homepage'],
                 ['href' => '/about', 'text' => 'About'],
+                ['href' => '/first-page', 'text' => 'Test'],
             ],
         ]);
         return $this->renderer->render($template, $data);
