@@ -6,8 +6,6 @@ require __DIR__ . '/../vendor/autoload.php';
 
 error_reporting(E_ALL);
 
-$env = 'devel';
-
 /* register error handler */
 $whoops = new \Whoops\Run;
 if ($env !== 'live') {
