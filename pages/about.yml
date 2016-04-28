@@ -18,4 +18,9 @@ content: |
         <li><a href="https://bootswatch.com/lumen/">Lumen Bootswatch</a>
         <li><a href="http://hackerthemes.com/bootstrap-cheatsheet">Bootsrap Cheatsheet</a>
         <li><a href="http://glyphsearch.com/?library=font-awesome">Glyphsearch</a>
+        <li>DigitalOcean
+        <ul>
+            <li><code>TODO: add links to setup process howtos</code>
+            <li><a href="https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04">Https with Let's Encrypt</a>
+        </ul>
     </ul>
