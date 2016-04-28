@@ -4,7 +4,9 @@ namespace NoFw;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-error_reporting(E_ALL);
+$env = 'live';
+//$end = 'dev';
+//error_reporting(E_ALL);
 
 /* register error handler */
 $whoops = new \Whoops\Run;
@@ -12,7 +14,7 @@ if ($env !== 'live') {
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 } else {
     $whoops->pushHandler(function($e) {
-        echo 'Friendly error page and send email about error to developer';
+        echo 'Whooops, something happened. Errr... Try again?';
     });
 }
 $whoops->register();
