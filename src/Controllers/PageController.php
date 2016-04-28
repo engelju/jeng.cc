@@ -32,7 +32,7 @@ class PageController
             return $this->response->setContent('404 - Page not found');
         }
 
-        $html = $this->renderer->render('Page', $data);
+        $html = $this->renderer->render('page', $data);
         $this->response->setContent($html);
     }
 }
