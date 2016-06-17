@@ -18,6 +18,7 @@ content: |
         <li><a href="https://bootswatch.com/lumen/">Lumen Bootswatch</a>
         <li><a href="http://hackerthemes.com/bootstrap-cheatsheet">Bootsrap Cheatsheet</a>
         <li><a href="http://glyphsearch.com/?library=font-awesome">Glyphsearch</a>
+        <li>Heroku
         <li>DigitalOcean
         <ul>
             <li><code>TODO: add links to setup process howtos</code>
