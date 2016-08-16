@@ -9,8 +9,8 @@ menuItems:
   - 
     href: http://www.last.fm/user/tandouri
     text: |
-        <img src="https://cdn.last.fm/flatness/badges/lastfm_red_small.gif" height="20" width="60" align="absmiddle"> My Last.fm
+        <img src="https://cdn.last.fm/flatness/badges/lastfm_red_small.gif" height="20" width="60" align="absmiddle">
   - 
     href: https://github.com/engelju
     text: |
-        <img class="emoji" title=":octocat:" alt=":octocat:" src="https://a248.e.akamai.net/assets.github.com/images/icons/emoji/octocat.png" height="20" width="20" align="absmiddle"> My Github
+        <img class="emoji" title=":octocat:" alt=":octocat:" src="https://a248.e.akamai.net/assets.github.com/images/icons/emoji/octocat.png" height="20" width="20" align="absmiddle">
