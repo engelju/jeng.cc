@@ -37,6 +37,11 @@ a {
 a:hover {
   color: #196127;
 }
+img {
+  width: auto ;
+  max-width: 100% ;
+  height: auto ;
+}
 .wrapper {
   width: 100%;
   max-width: 800px;
