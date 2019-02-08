@@ -1,0 +1,9 @@
+version: '3'
+services:
+    website:
+      container_name: 'jeng.cc'
+      image: httpd
+      ports:
+        - 5000:80
+      volumes:
+        - .:/usr/local/apache2/htdocs/
